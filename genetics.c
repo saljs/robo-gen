@@ -1,4 +1,4 @@
-/*    
+/*
  *    Genetic algorithm specific funtions
  *    Sal Skare
  */
@@ -8,7 +8,7 @@
 //initialize a random starting population
 void init_pop(gene* population)
 {
-	//initialize the genome to a random binary string
+    //initialize the genome to a random binary string
     for(int c = 0; c < 60; c++)
     {
         if(random() >= (RAND_MAX/2))
@@ -27,7 +27,7 @@ void init_pop(gene* population)
 //use the 'roulette wheel' method to select members from a population
 int roulettewheel(gene population[])
 {
-	//add together all the scores of the generation to create a total
+    //add together all the scores of the generation to create a total
     float tmp = 0;
     for(int i = 0; i < BATCHSIZE; i++)
     {
@@ -39,7 +39,7 @@ int roulettewheel(gene population[])
     //choose a random nuber greater than 0 and less than the total of the scores in int value
     int ball = random() % total;
 
-    //check to see where the ball has 'landed' within the total previosly created 
+    //check to see where the ball has 'landed' within the total previosly created
     int wheel = 0;
     for(int i = 0; i < BATCHSIZE; i++)
     {
@@ -66,7 +66,7 @@ void newpop(int a, int b, gene population[], gene* newgen_a, gene* newgen_b)
     //check to see if the bitstrings are crossed
     if(random() <= RAND_MAX * CROSSOVERRATE)
     {
-		//select a random point along the string, create two new genes with everything after that point flipped
+        //select a random point along the string, create two new genes with everything after that point flipped
         int crosslen = random() % 60;
         int i;
         for(i = 0; i < crosslen; i++)
@@ -94,11 +94,11 @@ void newpop(int a, int b, gene population[], gene* newgen_a, gene* newgen_b)
     }
     else
     {
-		//copy the old genomes into the new ones unchanged
+        //copy the old genomes into the new ones unchanged
         *newgen_a = population[a];
         *newgen_b = population[b];
     }
-    
+
     //parse over both genes and mutate bits proportional to the mutation rate
     for(int i = 0; i < 60; i++)
     {

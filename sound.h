@@ -1,4 +1,4 @@
-/*    
+/*
  *    Output sounds for different events
  *    Sal Skare
  */

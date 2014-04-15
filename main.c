@@ -1,4 +1,4 @@
-/*    
+/*
  *    Main control loop and fitness function for robot
  *    Sal Skare
  */
@@ -75,11 +75,11 @@ int main(void)
         //score the population
         for(int i = 0; i < BATCHSIZE; i++)
         {
-			//skip if already scored
-			if(population[i].score != 0)
-			{
-				continue;
-			}
+            //skip if already scored
+            if(population[i].score != 0)
+            {
+                continue;
+            }
             decodedGene toScore = parseGene(population[i]);
             population[i].score = fitness(toScore, &isCrit);
             if(isCrit == true)
@@ -166,7 +166,7 @@ float fitness(decodedGene vars, bool* isCrit)
             stop();
             while(getSolar() > vars.threshold && millis() - start < 300000)
             {
-				//check to see if battery is dead or program is interrupted manually
+                //check to see if battery is dead or program is interrupted manually
                 delay(500);
                 if(getBattery() <= 6.2 || digitalRead(11) == LOW)
                 {
@@ -214,7 +214,7 @@ float fitness(decodedGene vars, bool* isCrit)
         //drive forwards unless stopped
         while(millis() - deltimest < vars.delay * 100)
         {
-			//if the robot has run into something
+            //if the robot has run into something
             if(digitalRead(5) == LOW)
             {
                 stop();

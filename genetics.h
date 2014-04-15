@@ -1,4 +1,4 @@
-/*    
+/*
  *    Genetic algorithm specific funtions
  *    Sal Skare
  */

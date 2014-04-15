@@ -1,4 +1,4 @@
-/*    
+/*
  *    Sensing and motor funtions for robot
  *    Sal Skare
  */
@@ -8,7 +8,7 @@
 //setup different inputs and outputs
 int setup()
 {
-	//load the spi daemon
+    //load the spi daemon
     system("/usr/local/bin/gpio load spi");
     if (wiringPiSetup () == -1)
     {

@@ -1,4 +1,4 @@
-/*    
+/*
  *    Sensing and motor funtions for robot
  *    Sal Skare
  */
